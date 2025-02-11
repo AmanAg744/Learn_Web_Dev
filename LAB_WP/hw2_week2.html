@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - The Future of Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .magazine-cover {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1.4;
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .magazine-cover:hover {
+            transform: scale(1.02);
+        }
+
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 8%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 8%);
+            background-size: 50% 50%;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background-color: #ff6b6b;
+            bottom: -5px;
+            left: 0;
+            animation: expand 2s infinite alternate;
+        }
+
+        @keyframes expand {
+            0% { width: 40px; }
+            100% { width: 100px; }
+        }
+
+        .tagline {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .main-article {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #4ecdc4;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(78, 205, 196, 0.3);
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            transform: skew(-10deg);
+        }
+
+        .topic {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .issue-info {
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.7;
+        }
+
+        .graphic-element {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .graphic-1 {
+            width: 150px;
+            height: 150px;
+            top: -75px;
+            right: -75px;
+        }
+
+        .graphic-2 {
+            width: 100px;
+            height: 100px;
+            bottom: 50px;
+            left: -50px;
+        }
+
+        @media (max-width: 576px) {
+            .magazine-cover {
+                max-width: 90%;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .main-article {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="magazine-cover">
+            <div class="background-pattern"></div>
+            <div class="graphic-element graphic-1"></div>
+            <div class="graphic-element graphic-2"></div>
+            <div class="content d-flex flex-column justify-content-between p-4">
+                <header>
+                    <h1 class="logo mb-0">SOVA</h1>
+                    <p class="tagline">The Future of CompSci</p>
+                </header>
+                <main class="my-4">
+                    <h2 class="main-article mb-3">
+                        <span class="highlight">AI Revolution:</span> Reshaping Our Digital Landscape
+                    </h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="topic">AI</span>
+                        <span class="topic">Machine Learning</span>
+                        <span class="topic">Ethics</span>
+                    </div>
+                </main>
+                <footer class="mt-auto">
+                    <p class="issue-info mb-0">ISSUE 42 • JAN 2025 • $8.99</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
